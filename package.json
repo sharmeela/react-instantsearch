@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "postinstall": "lerna run build:cjs --scope react-instantsearch-*",
-    "start": "yarn storybook",
-    "build": "lerna run build --scope react-*",
+    "start": "node api.js && yarn storybook",
+    "build": "node api.js && lerna run build --scope react-*",
     "watch": "lerna run watch --scope react-instantsearch-* --parallel",
     "release": "shipjs prepare",
     "lint": "eslint --ext .js,.ts,.tsx .",
@@ -129,7 +129,7 @@
     "rollup-plugin-uglify": "6.0.3",
     "shipjs": "0.23.0",
     "style-loader": "1.0.0",
-    "typescript": "3.8.3",
+    "typescript": "3.9.10",
     "webpack": "4.40.2",
     "webpack-cli": "3.3.7"
   },
