@@ -1,5 +1,5 @@
 {
-  "version": "6.11.1",
+  "version": "6.12.0-alpha.1",
   "private": true,
   "license": "MIT",
   "workspaces": [
@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "postinstall": "lerna run build:cjs --scope react-instantsearch-*",
-    "start": "yarn storybook",
-    "build": "lerna run build --scope react-*",
+    "start": "node api.js && yarn storybook",
+    "build": "node api.js && lerna run build --scope react-*",
     "watch": "lerna run watch --scope react-instantsearch-* --parallel",
     "release": "shipjs prepare",
     "lint": "eslint --ext .js,.ts,.tsx .",
