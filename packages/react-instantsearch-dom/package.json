@@ -1,7 +1,7 @@
 {
   "name": "react-instantsearch-dom",
   "version": "6.11.2",
-  "description": "⚡ Lightning-fast search for React DOM, by Algolia",
+  "description": "\u26a1 Lightning-fast search for React DOM, by Algolia",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "sideEffects": false,
@@ -24,14 +24,18 @@
     "react-dom",
     "search"
   ],
-  "files": ["README.md", "server.js", "dist"],
+  "files": [
+    "README.md",
+    "server.js",
+    "dist"
+  ],
   "scripts": {
     "clean": "rm -rf dist",
     "watch": "yarn build:cjs --watch",
-    "build": "yarn build:cjs && yarn build:es && yarn build:umd",
-    "build:cjs": "babel src --root-mode upward --extensions '.js,.ts,.tsx' --out-dir dist/cjs --ignore '**/__tests__/**/*','**/__mocks__/**/*' --quiet",
-    "build:es": "BABEL_ENV=es babel src --root-mode upward --extensions '.js,.ts,.tsx' --out-dir dist/es --ignore '**/__tests__/**/*','**/__mocks__/**/*' --quiet",
-    "build:umd": "BABEL_ENV=rollup rollup -c rollup.config.js"
+    "build": "node init && yarn build:cjs && yarn build:es && yarn build:umd",
+    "build:cjs": "node init && babel src --root-mode upward --extensions '.js,.ts,.tsx' --out-dir dist/cjs --ignore '**/__tests__/**/*','**/__mocks__/**/*' --quiet",
+    "build:es": "node init && BABEL_ENV=es babel src --root-mode upward --extensions '.js,.ts,.tsx' --out-dir dist/es --ignore '**/__tests__/**/*','**/__mocks__/**/*' --quiet",
+    "build:umd": "node init && BABEL_ENV=rollup rollup -c rollup.config.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.1.2",
